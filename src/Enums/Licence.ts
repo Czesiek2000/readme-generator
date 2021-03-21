@@ -1,0 +1,22 @@
+export enum Licence {
+    MIT = 'MIT',
+    GNU = 'GNU (GNU General Public License (GPL) 2.0)',
+    APACHE = 'Apache License 2.0',
+    GNU3 = 'GNU General Public License (GPL) 3.0',
+    BSD = 'BSD License 2.0 (3-clause, New or Revised)',
+    ISC = 'ISC Licence',
+    AL = 'Artistic License (Perl)',
+    GNULGPL2 = 'GNU Lesser General Public License (LGPL) 2.1',
+    GNULGPL3 = 'GNU Lesser General Public License (LGPL) 3.0',
+    EPL = 'Eclipse Public License (EPL)',
+    MPL = 'Microsoft Public License',
+    SBSD = 'Simplified BSD License (BSD)',
+    CPOL = 'Code Project Open License 1.02',
+    MZPL = 'Mozilla Public License (MPL) 1.1',
+    GNUA = 'GNU Affero General Public License 3.0 or later',
+    CDADL = 'Common Development and Distribution License',
+    DWTFYW = 'Do What the F**k You Want To Public License',
+    MRL = 'Microsoft Reciprocal License',
+    SGPL = 'Sun GPL with Classpath Exception 2.0',
+    ZLIB = 'zlib/libpng License'
+}
