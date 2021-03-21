@@ -1,0 +1,27 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "Simple README generator made with typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc && node lib/script.js",
+    "compiled": "node lib/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Czesiek2000/readme-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Czesiek2000/readme-generator/issues"
+  },
+  "homepage": "https://github.com/Czesiek2000/readme-generator#readme",
+  "devDependencies": {
+    "@types/inquirer": "^7.3.1",
+    "@types/node": "^14.14.34",
+    "inquirer": "^8.0.0",
+    "typescript": "^4.2.3"
+  }
+}
