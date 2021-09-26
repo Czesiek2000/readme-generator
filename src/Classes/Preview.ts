@@ -1,6 +1,6 @@
-import { ImageType } from "../Interfaces/Image_type";
+import { Image } from "../Interfaces/Image";
 
-export class Preview implements ImageType {
+export class Preview implements Image {
     src: string;
     width: number;
     alt: string;
