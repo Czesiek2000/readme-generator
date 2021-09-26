@@ -19,7 +19,7 @@ export function title(title: string, uppercase: string, centered: boolean) {
         template += `<div align="center"><h1>${title.toUpperCase()}</h1></div>`
     }
 
-    if (uppercase.toLowerCase() === 'uppercase') {
+    if (uppercase.toLowerCase() === 'lowercase') {
         if (!centered) {
             template += `# ${title.toLowerCase()}\n`
             
