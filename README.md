@@ -1,6 +1,8 @@
 # README GENERATOR
 
-This project is console app written in Typescript. It ask you some questions and creating `README.md` file based on your answers.
+This project is console app written in **Typescript & Nodejs**. It ask you some questions in the terminal and help you create `README.md` file based on your answers. 
+
+Answer question that way you want your readme to be look like. So if you want bold text you just write ** on the begining and end of the text that should be bold
 
 ## Technologies
 Technologies used in this project:
