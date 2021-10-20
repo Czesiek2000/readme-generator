@@ -2,7 +2,7 @@
   "name": "readme-generator",
   "version": "1.0.0",
   "description": "Simple README generator made with typescript",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "dev": "tsc && node lib/script.js",
     "compiled": "node lib/script.js"
