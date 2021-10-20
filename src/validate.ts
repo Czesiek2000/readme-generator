@@ -1,5 +1,6 @@
-const os = require('os');
+// const os = require('os');
 const pkg = require('../package.json')
+import os from 'os';
 import path from 'path';
 import { config } from './config';
 
@@ -11,7 +12,7 @@ export function isValid(input : string) : boolean | string {
     return true
 }
 
-export function validateAuthor() : string {
+export function validateAuthor() : any {
     return pkg.author.length === 0 ? os.userInfo().username : pkg.author
 }
 

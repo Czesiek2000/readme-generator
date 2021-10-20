@@ -1,6 +1,6 @@
 const pkg = require('../package.json')
 const os = require('os');
-import { copywrite } from "./helper";
+import { validateAuthor } from "./validate";
 
 export const config = {
     OUT_DIR: 'test',
@@ -15,5 +15,5 @@ export const config = {
     BADGES: ["Licence", "Contributors", "Version", "Forks", "Size", "Discord"],
     MANAGER: ['npm', 'yearn'],
     EMOJIS: false,
-    COPYWRITE: `Copywrite (c) ${new Date().getFullYear()}, ${copywrite()}`
+    COPYWRITE: `Copywrite (c) ${new Date().getFullYear()}, ${''}`
 }
