@@ -17,7 +17,7 @@ export interface Output {
     install: Languages;
     image?: Preview;
     technologies: string[];
-    npm_yarn: string;
+    packageManager: string;
     list_type: string;
     badges: string[];
     previews?: Preview[];

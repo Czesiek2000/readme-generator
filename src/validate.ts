@@ -31,3 +31,13 @@ export function includeEmojis(include : boolean) {
 export function projectName() : string {
     return pkg.name !== undefined ? pkg.name : path.dirname(__filename).split(path.sep).pop()
 }
+
+export function imageValid(paramsNumber : string) : boolean | string {
+    let params = paramsNumber.split(',');
+    params.forEach(p => p.trim());
+    if (params.length !== 3) {
+        return "Image must have specified 3 arguments: source, alt, width"
+    }
+
+    return true;
+}

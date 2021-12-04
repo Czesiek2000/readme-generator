@@ -15,5 +15,6 @@ export const config = {
     BADGES: ["Licence", "Contributors", "Version", "Forks", "Size", "Discord"],
     MANAGER: ['npm', 'yearn'],
     EMOJIS: false,
-    COPYWRITE: `Copywrite (c) ${new Date().getFullYear()}, ${''}`
+    COPYWRITE: `Copywrite (c) ${new Date().getFullYear()}, ${''}`,
+    DEFAULT_DIST_FOLDER: 'test',
 }

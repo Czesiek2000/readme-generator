@@ -55,7 +55,7 @@ inquirer.prompt(prompt)
         install: answer.install,
         image,
         technologies: answer.technologies.split(','),
-        npm_yarn: answer.npm_yarn,
+        packageManager: answer.packageManager,
         list_type: answer.list_types,
         badges: answer.badges,
         previews,

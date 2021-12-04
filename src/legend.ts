@@ -7,7 +7,7 @@ export function legend(toc : Table) : string {
         template += '\n## Table of contents\n\n'
         template += technologies(toc.technologies)
         template += prerequires(toc.prerequisite)
-        // installation
+        template += instalation(toc.instalation)
         template += include_author(toc.author)
         template += contrib(toc.contributors)
         template += contributing(toc.contributing)
@@ -75,5 +75,15 @@ export function include_licence(licence: boolean) : string {
     }
 
     return template;
+}
+
+export function instalation(instalation:boolean) : string {
+    let template = '';
+
+    if (instalation || instalation !== null) {
+        template += '* [Instalation](#Instalation)\n'
+    }
+
+    return template
 }
 

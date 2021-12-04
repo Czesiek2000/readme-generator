@@ -1,9 +1,11 @@
-const pkg = require('../package.json');
+// const pkg = require('../package.json');
+import * as pkg from '../package.json';
 import { Licence } from './Enums/Licence';
 import { isValid, projectName } from './validate';
 import { config } from "./config";
 import { Languages } from './Enums/Languages';
 import { captitalize } from "./helper";
+import { imageValid } from './validate';
 
 export const prompt = [
     {
@@ -43,8 +45,7 @@ export const prompt = [
     {
         name: "github_user",
         type: 'input',
-        message: 'Github username?',
-        validate: isValid
+        message: 'Github username?(leave empty if it is the same as author)',
     },
     {
         name: "contributors",
@@ -79,6 +80,7 @@ export const prompt = [
         name: "image",
         type: 'input',
         message: 'Include image?(if yes type path to image,alt,width (only number) - (separate with [,]))',
+        validate: imageValid,
     },
     {
         name: 'technologies',
@@ -87,7 +89,7 @@ export const prompt = [
         validate: isValid
     },
     {
-        name: 'npm_yarn',
+        name: 'packageManager',
         type: 'checkbox',
         message: 'Do you use npm or yarn or both?',
         validate: isValid,

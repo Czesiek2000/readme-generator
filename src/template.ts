@@ -25,7 +25,7 @@ export function create(output : Output) : void {
         included: output.legend,
         prerequisite: output.prerequires,
         technologies: output.technologies.length,
-        // instalation: output.install !== null,
+        instalation: output.install !== null,
         author: output.author.length !== 0,
         contributors: output.contributors.length,
         contributing: output.contributing,
@@ -37,7 +37,7 @@ export function create(output : Output) : void {
 
     template += "\n" + technologies(output.technologies, output.list_type);
     
-    template += "\n" + inst.instalation(output.install, output.npm_yarn)
+    template += "\n" + inst.instalation(output.install, output.packageManager)
     
     template += "\n" + author(output.author)
     
