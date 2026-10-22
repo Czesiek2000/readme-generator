@@ -15,8 +15,8 @@ export function create(output : Output) : void {
     
     template += `\n${output.description}\n<br/>\n<br/>`
 
-    if (!output.image === null) {
-        template += `${output.image?.imageCreate()}`
+    if (output.image) {
+        template += `${output.image.imageCreate()}`
     }
 
     template += "\n" + badges(output.badges, output.github_user);
@@ -79,8 +79,8 @@ export function contributors(contributors : string[], type : string) : string {
         if (type === config.LIST_TYPES[0]) {
             
             contributors.forEach((contributor : string, index : number) => {
-                template += `${index + 1}. ${contributor}\n`
-             + 1});
+                template += `${index + 1}. ${contributor}\n`;
+            });
             
         }else {
 
