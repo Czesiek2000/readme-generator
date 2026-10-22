@@ -7,6 +7,25 @@ import { Preview } from "./Classes/Preview";
 import { Output } from './Interfaces/Output'
 import { Logger } from './Classes/Logger';
 
+export function parseCommaSeparated(input: string): string[] {
+    if (!input || input.trim().length === 0) {
+        return [];
+    }
+    return input.split(',').map(val => val.trim());
+}
+
+export function parseImage(input: string): Preview | undefined {
+    if (!input || input.trim().length === 0) {
+        return undefined;
+    }
+    const imageValues = parseCommaSeparated(input);
+    if (imageValues.length === 3) {
+        return new Preview(imageValues[0], imageValues[2], parseInt(imageValues[1]));
+    }
+    Logger.log("Cannot create image, pass exactly 3 arguments (source, width, alt)");
+    return undefined;
+}
+
 // clear console
 Logger.clear();
 
@@ -15,30 +34,19 @@ inquirer.prompt(prompt)
 .then ((answer : any) => {
     if (!answer._confirm) {
         console.log('Something failed');
+        return;
     }
 
-    let image;
-    if (answer.image.length > 0) {
-        const imageValues : string[] = answer.image.split(',')
-        
-        if (imageValues.length !== 3) {
-            Logger.log("Cannot create image, pass more or less than 3 arguments");
-            image = null;
-        }
-
-        image = new Preview(imageValues[0], imageValues[2], parseInt(imageValues[1]))
-        image.display()
-        
+    const image = parseImage(answer.image);
+    if (image) {
+        image.display();
     }
     
     let previews : Preview[] = [];
-    if (answer.previews.length !== 0) {
-        let pr = answer.previews.split(',');
-
-        pr.forEach((p : any, index: number) => {
-            previews.push(new Preview(p, `image${index}`))
-        });
-    }
+    const pr = parseCommaSeparated(answer.previews);
+    pr.forEach((p : string, index: number) => {
+        previews.push(new Preview(p, `image${index}`));
+    });
 
     let output : Output = {
         name: answer.project_name,
@@ -48,13 +56,13 @@ inquirer.prompt(prompt)
         legend: answer.legend,
         author: answer.author,
         github_user: answer.github_user,
-        contributors: answer.contributors.split(','),
+        contributors: parseCommaSeparated(answer.contributors),
         contributing: answer.contributing,
         licence: answer.licence,
         prerequires: answer.prerequires,
         install: answer.install,
         image,
-        technologies: answer.technologies.split(','),
+        technologies: parseCommaSeparated(answer.technologies),
         packageManager: answer.packageManager,
         list_type: answer.list_types,
         badges: answer.badges,
@@ -66,4 +74,6 @@ inquirer.prompt(prompt)
 
     create(output);
    
-})
+}).catch((error: any) => {
+    Logger.error("An error occurred during prompts: " + error.message);
+});

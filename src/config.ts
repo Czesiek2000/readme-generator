@@ -13,8 +13,8 @@ export const config = {
     VERSION: '1.0.0',
     LIST_TYPES: ['Ordered list', 'Unordered list'],
     BADGES: ["Licence", "Contributors", "Version", "Forks", "Size", "Discord"],
-    MANAGER: ['npm', 'yearn'],
+    MANAGER: ['npm', 'yarn'],
     EMOJIS: false,
-    COPYWRITE: `Copywrite (c) ${new Date().getFullYear()}, ${''}`,
+    COPYRIGHT: `Copyright (c) ${new Date().getFullYear()}, ${''}`,
     DEFAULT_DIST_FOLDER: 'test',
 }

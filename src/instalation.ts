@@ -16,7 +16,7 @@ export function instalation(install: Languages, npm_yarn : string) : string {
             switch (inst.toLowerCase()) {
                 case 'git':
                     template += git();
-                    
+                    break;
                 case 'vue':
                     template += runVue(true, npm_yarn);
                     break;
